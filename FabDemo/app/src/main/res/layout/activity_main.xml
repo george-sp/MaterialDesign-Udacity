@@ -14,5 +14,6 @@
         android:id="@+id/custom_fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="?attr/colorAccent"/>
+        android:background="?attr/colorAccent"
+        android:src="@drawable/fab_plus"/>
 </RelativeLayout>
