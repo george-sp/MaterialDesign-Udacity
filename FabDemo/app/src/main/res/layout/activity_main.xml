@@ -14,7 +14,7 @@
         android:id="@+id/custom_fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="@drawable/oval_shape"
+        android:background="@drawable/oval_ripple"
         android:elevation="6dp"
         android:src="@drawable/fab_plus"/>
 </RelativeLayout>

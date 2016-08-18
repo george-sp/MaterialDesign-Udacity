@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    - To enable ripples, we need to change the button's background
+      from a static shape to one that's enclosed in a ripple tag.
+    - The colorControlHighlight is the color applied to things like ripples, list selectors, etc.
+    - The main difference between oval_shape and oval_ripple
+      is that the ripple tag encloses our shape.
+-->
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?android:colorControlHighlight">
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="?android:colorAccent"/>
+        </shape>
+    </item>
+</ripple>
