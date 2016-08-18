@@ -10,8 +10,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.codeburrow.fabdemo.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+    <ImageButton
+        android:id="@+id/custom_fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="?attr/colorAccent"/>
 </RelativeLayout>
