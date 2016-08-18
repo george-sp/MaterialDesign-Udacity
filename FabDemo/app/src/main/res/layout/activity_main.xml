@@ -16,5 +16,6 @@
         android:layout_height="56dp"
         android:background="@drawable/oval_ripple"
         android:elevation="6dp"
-        android:src="@drawable/fab_plus"/>
+        android:src="@drawable/fab_plus"
+        android:stateListAnimator="@animator/fab_raise"/>
 </RelativeLayout>
