@@ -18,4 +18,8 @@ _You can build this effect entirely in XML using the new at bar layout and colla
        |
        |_\ CollapsingToolbarLayout
          /     <b>app:layout_scrollFlags="scroll|exitUntilCollapsed"</b>
+              |
+              |_\ Toolbar
+                 /     <i>android:layout_height="56dp"
+                       app:layout_collapseMode="pin"</i>
 </pre>
