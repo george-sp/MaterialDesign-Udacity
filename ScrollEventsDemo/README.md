@@ -13,13 +13,16 @@ _You can build this effect entirely in XML using the new at bar layout and colla
  CoordinatorLayout
 |
 |_\ AppBarLayout
-  /     <i>android:layout_height="168dp"
-        android:background="?colorPrimary"</i>
-       |
-       |_\ CollapsingToolbarLayout
-         /     <b>app:layout_scrollFlags="scroll|exitUntilCollapsed"</b>
-              |
-              |_\ Toolbar
-                 /     <i>android:layout_height="56dp"
-                       app:layout_collapseMode="pin"</i>
+| /     <i>android:layout_height="168dp"
+|       android:background="?colorPrimary"</i>
+|      |
+|      |_\ CollapsingToolbarLayout
+|        /     <b>app:layout_scrollFlags="scroll|exitUntilCollapsed"</b>
+|             |
+|             |_\ Toolbar
+|               /     <i>android:layout_height="56dp"
+|                     app:layout_collapseMode="pin"</i>
+|
+|_\ RecyclerView
+  /     <b>app:layout_behavior="@string/appbar_scrolling_view_behavior"</b>
 </pre>
