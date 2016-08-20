@@ -9,4 +9,10 @@ _You can build this effect entirely in XML using the new at bar layout and colla
 
 #### res/layout/activity_main.xml
 ----------------------------------
-CoordinatorLayout
+``` 
+ CoordinatorLayout
+|
+|_\ AppBarLayout
+  / 	android:layout_height="168dp"
+        android:background="?colorPrimary"
+```

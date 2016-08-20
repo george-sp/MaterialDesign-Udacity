@@ -13,4 +13,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+        Use an AppBarLayout and give it the expanded height we want (168dp).
+    -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:background="?colorPrimary">
+
+    </android.support.design.widget.AppBarLayout>
 </android.support.design.widget.CoordinatorLayout>
