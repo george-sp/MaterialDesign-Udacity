@@ -52,7 +52,17 @@
                 app:contentInsetStart="72dp"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@drawable/ic_menu"/>
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
+
+    <!--
+        Finally, the other widget here will be a RecyclerView,
+        which uses a special predefined layout behavior
+        that triggers appbar_scrolling when the RecyclerView is scrolled.
+    -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 </android.support.design.widget.CoordinatorLayout>
