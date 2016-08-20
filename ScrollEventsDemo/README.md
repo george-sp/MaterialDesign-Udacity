@@ -9,10 +9,13 @@ _You can build this effect entirely in XML using the new at bar layout and colla
 
 #### res/layout/activity_main.xml
 ----------------------------------
-``` 
+<pre>
  CoordinatorLayout
 |
 |_\ AppBarLayout
-  / 	android:layout_height="168dp"
-        android:background="?colorPrimary"
-```
+  /     <i>android:layout_height="168dp"
+        android:background="?colorPrimary"</i>
+       |
+       |_\ CollapsingToolbarLayout
+         /     <b>app:layout_scrollFlags="scroll|exitUntilCollapsed"</b>
+</pre>
