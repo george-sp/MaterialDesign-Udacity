@@ -46,9 +46,30 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
+    <!--
+        Without this line:
+            android:nestedScrollingEnabled="true"
+        the app doesn't know when to scroll the toolbar, so our toolbar remains stationary.
+
+        This is because AppBarLayout expects to have a sibling in CoordinatorLayout
+        that is capable of nested scrolling.
+
+        We can do that with a nested scroll view from the support library,
+        or by setting nestedScrollingEnabled to true.
+
+        The nestedScrollingEnabled property is only present on scroll view for
+        Lollipop and above.
+
+        Nested scrolling works with CoordinatorLayout to notify and manage when:
+        - the app bar should be scrolling,
+        - the nested view should be scrolling,
+        - both should be scrolling,
+        - or none.
+    -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
