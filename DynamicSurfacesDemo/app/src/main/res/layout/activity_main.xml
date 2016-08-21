@@ -45,4 +45,19 @@
                 app:navigationIcon="@drawable/arrow_left"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/cupcake_ipsum"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+    </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
