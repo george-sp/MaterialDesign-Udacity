@@ -26,3 +26,9 @@ _You can build this effect entirely in XML using the new at bar layout and colla
 |_\ RecyclerView
   /     <b>app:layout_behavior="@string/appbar_scrolling_view_behavior"</b>
 </pre>
+
+==================================
+
+**Check out the documentation** for scroll flags in layout behaviors to find out about other great scrolling behaviors you can built with the library:
+- [Scroll Flags](https://developer.android.com/reference/android/support/design/widget/AppBarLayout.LayoutParams.html#setScrollFlags(int))
+- [Layout Behaviors](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.LayoutParams.html#setBehavior(android.support.design.widget.CoordinatorLayout.Behavior))
