@@ -5,4 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+        We set our app bar layout, that's the container that holds our app bar,
+        to have a background with the primary color.
+        The reason we have this question mark here:
+            android:background="?colorPrimary"
+        is that colorPrimary refers to a theme local attribute.
+        We could have also listed:
+            android:background="?attr/colorPrimary".
+    -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:background="?colorPrimary">
+
+    </android.support.design.widget.AppBarLayout>
 </android.support.design.widget.CoordinatorLayout>
