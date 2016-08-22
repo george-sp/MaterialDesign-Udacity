@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PickPalette</string>
+    <string name="pick_image">Pick An Image</string>
+    <string name="take_photo">Take A Photo</string>
 </resources>
