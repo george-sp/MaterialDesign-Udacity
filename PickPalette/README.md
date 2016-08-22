@@ -14,3 +14,8 @@ These color swatches fall into two different areas, either vibrant or a muted co
 
 The type and number of swatches is dependent on the composition of your image.
 And how much of it is in a certain color and how that color contrast to other colors in the image.
+
+==================================
+
+**Check out:**
+- [Info on Palettes](https://developer.android.com/reference/android/support/v7/graphics/Palette.html)
