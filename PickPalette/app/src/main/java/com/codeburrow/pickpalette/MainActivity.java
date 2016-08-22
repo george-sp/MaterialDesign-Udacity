@@ -1,5 +1,7 @@
 package com.codeburrow.pickpalette;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -32,5 +34,11 @@ public class MainActivity extends AppCompatActivity {
         Snackbar.make(findViewById(R.id.fragment), "Clicked FAB.", Snackbar.LENGTH_LONG)
                 //.setAction("Action", this)
                 .show();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        PickerFragment pickerFragment = new PickerFragment();
+        pickerFragment.show(fragmentManager, "dialog");
+        fragmentTransaction.commit();
     }
 }
