@@ -19,10 +19,12 @@ import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import butterknife.OnItemClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -104,5 +106,16 @@ public class MainActivity extends AppCompatActivity {
             hashMap.put("LightMuted", palette.getLightMutedSwatch());
 
         return hashMap;
+    }
+
+    @OnItemClick(R.id.grid_view)
+    void onItemClick(int position) {
+        Palette.Swatch swatch = ((Map.Entry<String, Palette.Swatch>) gridView.getItemAtPosition(position)).getValue();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Title Text Color: ").append("#" + Integer.toHexString(swatch.getBodyTextColor()).toUpperCase()).append("\n");
+        stringBuilder.append("Population: ").append(swatch.getPopulation());
+
+        Snackbar.make(gridView, stringBuilder.toString(), Snackbar.LENGTH_LONG).show();
     }
 }
