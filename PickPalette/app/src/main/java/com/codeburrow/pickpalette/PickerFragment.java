@@ -2,8 +2,10 @@ package com.codeburrow.pickpalette;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -22,9 +24,12 @@ public class PickerFragment extends DialogFragment {
     private static final String LOG_TAG = PickerFragment.class.getSimpleName();
 
     private static final int PICK_PHOTO = 100;
+    private static final int TAKE_PHOTO = 101;
 
     @InjectView(R.id.pickImage)
     Button pickImage;
+    @InjectView(R.id.takeImage)
+    Button takeImage;
 
     @Nullable
     @Override
@@ -47,6 +52,14 @@ public class PickerFragment extends DialogFragment {
         startActivityForResult(photoPickerIntent, PICK_PHOTO);
     }
 
+    @OnClick(R.id.takeImage)
+    void takeImage(View view) {
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(cameraIntent, TAKE_PHOTO);
+        }
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -59,6 +72,13 @@ public class PickerFragment extends DialogFragment {
                     getDialog().dismiss();
                 }
                 break;
+            case TAKE_PHOTO:
+                if (resultCode == Activity.RESULT_OK) {
+                    Log.e(LOG_TAG, "Took a photo.");
+                    Bundle extras = data.getExtras();
+                    Bitmap imageBitmap = (Bitmap) extras.get("data");
+                    getDialog().dismiss();
+                }
         }
     }
 }
