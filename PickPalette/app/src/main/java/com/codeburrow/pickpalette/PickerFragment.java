@@ -69,6 +69,7 @@ public class PickerFragment extends DialogFragment {
                 if (resultCode == Activity.RESULT_OK) {
                     Log.e(LOG_TAG, "Picked a photo.");
                     Uri selectedImage = data.getData();
+                    ((MainActivity) getActivity()).createPalette(selectedImage);
                     getDialog().dismiss();
                 }
                 break;
@@ -77,6 +78,7 @@ public class PickerFragment extends DialogFragment {
                     Log.e(LOG_TAG, "Took a photo.");
                     Bundle extras = data.getExtras();
                     Bitmap imageBitmap = (Bitmap) extras.get("data");
+                    ((MainActivity) getActivity()).createPalette(imageBitmap);
                     getDialog().dismiss();
                 }
         }
