@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
+    private SwatchAdapter mSwatchAdapter;
     @InjectView(R.id.tool_bar)
     Toolbar toolbar;
     @InjectView(R.id.imageView)
@@ -76,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onGenerated(Palette palette) {
                     HashMap hashMap = processPalette(palette);
+                    mSwatchAdapter = new SwatchAdapter(getApplicationContext(), hashMap.entrySet().toArray());
+                    gridView.setAdapter(mSwatchAdapter);
                 }
             });
         } catch (Exception ex) {
