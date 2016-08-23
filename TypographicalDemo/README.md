@@ -13,3 +13,8 @@ A small app to show you the different typographical sizes, and their names, that
 So, if you can see in this **`Typeface.createFromAsset()`** function, we have `getActivity()` and then `getAssets()`.
 If this is called before it's attached to the activity, it will result in an error.
 So, if we go to our _`onCreateView()`_ method, after instantiating our text views, we just call the **`setTypeface()`** function with the object that we just created.
+
+==================================
+
+**Check for a new font here:**
+- [Google Fonts](https://fonts.google.com/)
