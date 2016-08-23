@@ -1,5 +1,7 @@
 package com.codeburrow.typographicaldemo;
 
+import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,8 +21,16 @@ public class MainActivityFragment extends Fragment {
     @InjectView(R.id.headline)
     TextView headlineView;
 
+    Typeface courgette;
+
     /* Empty constructor per the documentation. */
     public MainActivityFragment() {
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        courgette = Typeface.createFromAsset(getActivity().getAssets(), "Courgette-Regular.ttf");
     }
 
     @Override
