@@ -1,8 +1,9 @@
 package com.codeburrow.transitionquizdemo;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -31,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MainActivity.this, DetailActivity.class));
+                startActivity(new Intent(MainActivity.this, DetailActivity.class),
+                        ActivityOptions.makeSceneTransitionAnimation(MainActivity.this
+                                //, view, "hero"
+                        ).toBundle());
             }
         });
     }

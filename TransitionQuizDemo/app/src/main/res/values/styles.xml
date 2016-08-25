@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
     </style>
 
+    <style name="AppTheme.Home">
+    </style>
+
+    <style name="AppTheme.Details">
+        <item name="android:windowEnterTransition">@transition/slide_right</item>
+        <item name="android:windowTransitionBackgroundFadeDuration">900</item>
+    </style>
 </resources>
