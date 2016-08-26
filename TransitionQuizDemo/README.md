@@ -1,4 +1,4 @@
-## ImmersiveImagesDemo
+## TransitionQuizDemo
 ----------------------------------
 Where is the slide from right content transition?
  
