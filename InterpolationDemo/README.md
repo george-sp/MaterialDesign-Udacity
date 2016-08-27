@@ -19,3 +19,8 @@ This app is an example of interpolation.
 	- tell it to start in 500 milliseconds: **`setStartDelay(long startDelay)`** - _The amount of time, in milliseconds, to delay processing the animation after start() is called._ and
 	- move the animation from the bottom of the screen: **`translationYBy(float value)`** - _This method will cause the View's translationY property to be animated by the specified value._, and then
 	- start the animation: **`start()`**.
+	
+==================================
+
+**Check the documentation for:**
+- [Interpolator Interface](https://developer.android.com/reference/android/view/animation/Interpolator.html)
