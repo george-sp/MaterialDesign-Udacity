@@ -82,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
              * class forName to get the class and then instantiate a new instance.
              */
             interpolator = (Interpolator) Class.forName(path).newInstance();
+            textView.animate()
+                    .setInterpolator(interpolator)
+                    .setDuration(duration)
+                    .setStartDelay(500)
+                    .translationYBy(-metrics.heightPixels)
+                    .start();
         } catch (Exception e) {
             e.printStackTrace();
         }
