@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void multipleChaoticElementsClick(View view) {
         startActivity(new Intent(this, MultipleChaoticElements.class));
     }
+
+    public void curvedMotionClick(View view) {
+        startActivity(new Intent(this, CurvedMotionList.class));
+    }
 }

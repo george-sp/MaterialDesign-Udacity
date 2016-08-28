@@ -19,8 +19,11 @@
             android:name=".MultipleElements"
             android:label="@string/multiple_elements">
         </activity>
-        <activity android:name=".MultipleChaoticElements"
+        <activity
+            android:name=".MultipleChaoticElements"
             android:label="@string/multiple_chaotic_elements">
+        </activity>
+        <activity android:name=".CurvedMotionList">
         </activity>
     </application>
 
