@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CoordinatedMotionDemo</string>
+    <string name="multiple_elements">Multiple Elements</string>
 </resources>

@@ -23,7 +23,7 @@
             android:layout_marginTop="8dp"
             android:minHeight="?android:actionBarSize"
             android:onClick="multipleElementsClick"
-            android:text="Multiple Elements"/>
+            android:text="@string/multiple_elements"/>
 
         <Button
             android:id="@+id/multiple_incoherent_elements"

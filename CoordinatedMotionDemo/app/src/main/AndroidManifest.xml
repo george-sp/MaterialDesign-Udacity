@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".MultipleElements"
+            android:label="@string/multiple_elements">
+        </activity>
     </application>
 
 </manifest>
