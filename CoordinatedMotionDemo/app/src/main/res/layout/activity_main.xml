@@ -35,7 +35,7 @@
             android:layout_marginTop="8dp"
             android:minHeight="?android:actionBarSize"
             android:onClick="multipleChaoticElementsClick"
-            android:text="Multiple Incoherent Elements"/>
+            android:text="@string/multiple_chaotic_elements"/>
 
         <Button
             android:id="@+id/curved_motion"

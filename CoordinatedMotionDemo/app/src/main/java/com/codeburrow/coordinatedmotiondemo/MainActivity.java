@@ -16,4 +16,8 @@ public class MainActivity extends AppCompatActivity {
     public void multipleElementsClick(View view) {
         startActivity(new Intent(this, MultipleElements.class));
     }
+
+    public void multipleChaoticElementsClick(View view) {
+        startActivity(new Intent(this, MultipleChaoticElements.class));
+    }
 }

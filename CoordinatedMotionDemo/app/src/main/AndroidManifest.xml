@@ -15,8 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MultipleElements"
+        <activity
+            android:name=".MultipleElements"
             android:label="@string/multiple_elements">
+        </activity>
+        <activity android:name=".MultipleChaoticElements"
+            android:label="@string/multiple_chaotic_elements">
         </activity>
     </application>
 
