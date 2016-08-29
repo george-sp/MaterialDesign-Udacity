@@ -28,5 +28,11 @@ unnatural.
 
 Notice that the difference between this straight line transition and curved transition. The latter feels more natural.
 
-Be judicious with this technique as it can attract attention, so make sure it's used when
-that is your intention.
+Be judicious with this technique as it can attract attention, so make sure it's used when that is your intention.
+
+#### Transforming Surfaces - Size Change
+Material surfaces can transform their size, shape, and position.
+
+When animating a change in size of an item, you want to avoid having your users mistake this for a zoom effect, which might imply an elevation change, like this example.
+
+A good way to do this, is to animate the width, and the height at different rates, making it clear what is changing.
