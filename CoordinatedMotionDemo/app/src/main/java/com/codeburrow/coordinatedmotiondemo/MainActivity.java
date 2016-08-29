@@ -24,4 +24,8 @@ public class MainActivity extends AppCompatActivity {
     public void curvedMotionClick(View view) {
         startActivity(new Intent(this, CurvedMotionList.class));
     }
+
+    public void sizeChangeClick(View view) {
+        startActivity(new Intent(this, SizeChange.class));
+    }
 }

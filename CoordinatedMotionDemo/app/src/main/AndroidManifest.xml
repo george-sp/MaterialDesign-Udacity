@@ -23,11 +23,17 @@
             android:name=".MultipleChaoticElements"
             android:label="@string/multiple_chaotic_elements">
         </activity>
-        <activity android:name=".CurvedMotionList"
-                  android:label="@string/curved_motion_list">
+        <activity
+            android:name=".CurvedMotionList"
+            android:label="@string/curved_motion_list">
         </activity>
-        <activity android:name=".CurvedMotionDetails"
-                  android:label="@string/curved_motion_details">
+        <activity
+            android:name=".CurvedMotionDetails"
+            android:label="@string/curved_motion_details">
+        </activity>
+        <activity
+            android:name=".SizeChange"
+            android:label="@string/size_change">
         </activity>
     </application>
 

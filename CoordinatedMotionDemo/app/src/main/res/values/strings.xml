@@ -6,9 +6,11 @@
     <string name="coordinated_motion">Coordinated Motion</string>
     <string name="chaotic_motion">Chaotic Motion</string>
     <string name="curved_motion">Curved Motion</string>
+    <string name="transforming_surfaces">Transforming Surfaces</string>
 
     <string name="multiple_elements">Multiple Elements</string>
     <string name="multiple_chaotic_elements">Multiple Chaotic(Incoherent) Elements</string>
     <string name="curved_motion_list">Curved Motion List</string>
     <string name="curved_motion_details">Curved Motion Details</string>
+    <string name="size_change">Size Change</string>
 </resources>
