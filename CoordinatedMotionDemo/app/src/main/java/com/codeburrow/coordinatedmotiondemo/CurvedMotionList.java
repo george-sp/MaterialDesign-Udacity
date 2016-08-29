@@ -48,10 +48,10 @@ public class CurvedMotionList extends AppCompatActivity {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(hostActivity, CurvedMotionDetail.class);
+                    Intent intent = new Intent(hostActivity, CurvedMotionDetails.class);
                     boolean curve = (position % 2 == 0);
-                    intent.putExtra(CurvedMotionDetail.EXTRA_COLOR, color);
-                    intent.putExtra(CurvedMotionDetail.EXTRA_CURVE, curve);
+                    intent.putExtra(CurvedMotionDetails.EXTRA_COLOR, color);
+                    intent.putExtra(CurvedMotionDetails.EXTRA_CURVE, curve);
                     hostActivity.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(hostActivity, holder.avatar, holder.avatar.getTransitionName()).toBundle());
                 }
             });
