@@ -18,7 +18,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/avatar"/>
+        android:background="@drawable/avatar"
+        android:transitionName="@string/transition_avatar"/>
 
     <View
         android:id="@+id/title"

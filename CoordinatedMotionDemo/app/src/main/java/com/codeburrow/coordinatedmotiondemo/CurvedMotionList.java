@@ -1,6 +1,7 @@
 package com.codeburrow.coordinatedmotiondemo;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -48,7 +49,10 @@ public class CurvedMotionList extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(hostActivity, CurvedMotionDetail.class);
-                    hostActivity.startActivity(intent);
+                    boolean curve = (position % 2 == 0);
+                    intent.putExtra(CurvedMotionDetail.EXTRA_COLOR, color);
+                    intent.putExtra(CurvedMotionDetail.EXTRA_CURVE, curve);
+                    hostActivity.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(hostActivity, holder.avatar, holder.avatar.getTransitionName()).toBundle());
                 }
             });
         }
