@@ -1,6 +1,8 @@
 package com.codeburrow.coordinatedmotiondemo;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,7 +42,15 @@ public class CurvedMotionList extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final MessageHolder holder, final int position) {
-
+            final int color = COLORS[position % COLORS.length];
+            holder.avatar.setBackgroundTintList(ColorStateList.valueOf(color));
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(hostActivity, CurvedMotionDetail.class);
+                    hostActivity.startActivity(intent);
+                }
+            });
         }
 
         @Override
