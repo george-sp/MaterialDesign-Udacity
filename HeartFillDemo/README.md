@@ -53,7 +53,7 @@ But the opportunity to animate all or parts of the image is what we're really in
 
 ### [**`android.graphics.drawable.AnimatedVectorDrawable`**](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html)
 
-The [AnimatedVectorDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html) class lets you animate any property of a part of set of parts.
+The [AnimatedVectorDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html) class lets you animate any property of a part or set of parts.
 
 Here's a list of what you can animate:
 
@@ -74,5 +74,5 @@ individual elements within the drawable is quite powerful.)
 > The restriction when morphing is that the shapes need to have the same number of drawing commands in them in order to interpolate between the two states.
 > - **_trim start/end_**: When drawing a path, VectorDrawable allows you to only draw a portion of it
 by trimming the start or end of it.
-> - **_clip_path_**: VectorDrawables also support the notion of clip pass. That is applying a clip
+> - **_clip_path_**: VectorDrawables also support the notion of clip paths. That is applying a clip
 region to your drawing. Animating this clip region allows you to reveal or hide portions of the image.
