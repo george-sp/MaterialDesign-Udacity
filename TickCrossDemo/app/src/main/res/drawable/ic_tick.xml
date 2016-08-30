@@ -13,7 +13,7 @@
         <path
             android:name="@string/tick"
             android:pathData="@string/path_tick"
-            android:strokeColor="@color/stroke_color"
+            android:strokeColor="@color/stroke_color_tick"
             android:strokeLineCap="square"
             android:strokeWidth="@integer/stroke_width"/>
     </group>

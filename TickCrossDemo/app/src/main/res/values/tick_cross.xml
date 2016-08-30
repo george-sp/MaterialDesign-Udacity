@@ -19,6 +19,8 @@
 
     <!-- drawing -->
     <color name="stroke_color">#999</color>
+    <color name="stroke_color_tick">#99cc00</color>
+    <color name="stroke_color_cross">#ff4444</color>
 
     <!-- timing -->
     <integer name="duration">450</integer>

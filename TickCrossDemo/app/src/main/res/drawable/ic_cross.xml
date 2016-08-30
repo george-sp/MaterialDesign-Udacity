@@ -13,7 +13,7 @@
         <path
             android:name="@string/cross"
             android:pathData="@string/path_cross"
-            android:strokeColor="@color/stroke_color"
+            android:strokeColor="@color/stroke_color_cross"
             android:strokeLineCap="square"
             android:strokeWidth="@integer/stroke_width"/>
     </group>
