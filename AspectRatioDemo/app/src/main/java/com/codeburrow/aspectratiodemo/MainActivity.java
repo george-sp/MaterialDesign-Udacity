@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.codeburrow.aspectratiodemo.ui.ItemClickSupport;
+
 import butterknife.Bind;
 import butterknife.BindDimen;
 import butterknife.BindInt;
@@ -73,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         grid.setLayoutManager(gridLayoutManager);
         grid.addItemDecoration(new GridMarginDecoration(gridSpacing));
         grid.setHasFixedSize(true);
+
+        ItemClickSupport.addTo(grid).setOnItemClickListener(
+                new ItemClickSupport.OnItemClickListener() {
+                    @Override
+                    public void onItemClicked(RecyclerView recyclerView, int position, View view) {
+                        
+                    }
+                });
     }
 
     /**
