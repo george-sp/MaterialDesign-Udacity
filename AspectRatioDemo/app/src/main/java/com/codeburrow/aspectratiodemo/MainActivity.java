@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.codeburrow.aspectratiodemo.data.UnsplashService;
 import com.codeburrow.aspectratiodemo.data.model.Photo;
 import com.codeburrow.aspectratiodemo.ui.ItemClickSupport;
 
@@ -19,6 +20,7 @@ import butterknife.Bind;
 import butterknife.BindDimen;
 import butterknife.BindInt;
 import butterknife.ButterKnife;
+import retrofit.RestAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -88,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+        UnsplashService unsplashApi = new RestAdapter.Builder()
+                .setEndpoint(UnsplashService.ENDPOINT)
+                .build()
+                .create(UnsplashService.class);
     }
 
     /**
