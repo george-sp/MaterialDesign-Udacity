@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +21,15 @@ import butterknife.Bind;
 import butterknife.BindDimen;
 import butterknife.BindInt;
 import butterknife.ButterKnife;
+import retrofit.Callback;
 import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-
+    private static final int PHOTO_COUNT = 12;
     @Bind(R.id.image_grid)
     RecyclerView grid;
     @Bind(android.R.id.empty)
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     int columns;
     @BindDimen(R.dimen.grid_item_spacing)
     int gridSpacing;
+    private PhotoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,10 +96,27 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        UnsplashService unsplashApi = new RestAdapter.Builder()
+        UnsplashService unsplashService = new RestAdapter.Builder()
                 .setEndpoint(UnsplashService.ENDPOINT)
                 .build()
                 .create(UnsplashService.class);
+
+        unsplashService.getFeed(new Callback<List<Photo>>() {
+            @Override
+            public void success(List<Photo> photos, Response response) {
+                //grid.setAdapter(new PhotoAdapter(photos));
+                // the first items are really boring, get the last <n>
+                adapter = new PhotoAdapter(photos.subList(photos.size() - PHOTO_COUNT, photos
+                        .size()));
+                grid.setAdapter(adapter);
+                empty.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.e(LOG_TAG, "Error retrieving Unsplash feed: " + error);
+            }
+        });
     }
 
     /**
