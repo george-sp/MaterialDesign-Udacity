@@ -13,7 +13,9 @@ import android.widget.ProgressBar;
 
 import com.codeburrow.aspectratiodemo.data.UnsplashService;
 import com.codeburrow.aspectratiodemo.data.model.Photo;
+import com.codeburrow.aspectratiodemo.ui.ForegroundImageView;
 import com.codeburrow.aspectratiodemo.ui.ItemClickSupport;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     @BindDimen(R.dimen.grid_item_spacing)
     int gridSpacing;
     private PhotoAdapter adapter;
+    private String photoUrlBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
         grid.setLayoutManager(gridLayoutManager);
         grid.addItemDecoration(new GridMarginDecoration(gridSpacing));
         grid.setHasFixedSize(true);
+
+        photoUrlBase = "https://unsplash.it/"
+                + getResources().getDisplayMetrics().widthPixels
+                + "?image=";
 
         ItemClickSupport.addTo(grid).setOnItemClickListener(
                 new ItemClickSupport.OnItemClickListener() {
@@ -146,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
 
     protected static class PhotoViewHolder extends RecyclerView.ViewHolder {
 
+        @Bind(R.id.photo)
+        ForegroundImageView imageView;
+
         public PhotoViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -168,7 +178,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final PhotoViewHolder holder, final int position) {
-
+            final Photo photo = photos.get(position);
+            String url = photoUrlBase + photo.id;
+            Picasso.with(MainActivity.this)
+                    .load(url)
+                    .placeholder(R.color.placeholder)
+                    .into(holder.imageView);
         }
 
         @Override
