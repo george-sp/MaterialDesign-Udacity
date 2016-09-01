@@ -5,10 +5,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.codeburrow.aspectratiodemo.data.model.Photo;
 import com.codeburrow.aspectratiodemo.ui.ItemClickSupport;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.BindDimen;
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View view) {
-                        
+
                     }
                 });
     }
@@ -107,6 +112,48 @@ public class MainActivity extends AppCompatActivity {
             outRect.top = space;
             outRect.right = space;
             outRect.bottom = space;
+        }
+    }
+
+    protected static class PhotoViewHolder extends RecyclerView.ViewHolder {
+
+        public PhotoViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+    }
+
+    private class PhotoAdapter extends RecyclerView.Adapter<PhotoViewHolder> {
+
+        private final List<Photo> photos;
+
+        public PhotoAdapter(List<Photo> photos) {
+            this.photos = photos;
+        }
+
+        @Override
+        public PhotoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new PhotoViewHolder(LayoutInflater.from(MainActivity.this)
+                    .inflate(R.layout.photo_item, parent, false));
+        }
+
+        @Override
+        public void onBindViewHolder(final PhotoViewHolder holder, final int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return photos.size();
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return photos.get(position).id;
+        }
+
+        public Photo getItem(int position) {
+            return photos.get(position);
         }
     }
 }
