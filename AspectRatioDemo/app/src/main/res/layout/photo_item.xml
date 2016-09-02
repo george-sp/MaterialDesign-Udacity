@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.codeburrow.aspectratiodemo.ui.ForegroundImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photo"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/image_height"
+    android:clickable="true"
+    android:foreground="@drawable/grey_ripple"
+    android:scaleType="centerCrop"
+    android:stateListAnimator="@animator/raise"
+    android:transitionName="@string/transition_photo"/>
