@@ -1,6 +1,9 @@
 package com.codeburrow.aspectratiodemo;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -99,7 +102,12 @@ public class MainActivity extends AppCompatActivity {
                 new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View view) {
-
+                        Photo photo = adapter.getItem(position);
+                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(photoUrlBase + photo.id));
+                        intent.putExtra(DetailActivity.EXTRA_AUTHOR, photo.author);
+                        MainActivity.this.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, view, view.getTransitionName()).toBundle());
                     }
                 });
 
