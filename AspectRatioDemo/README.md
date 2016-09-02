@@ -27,4 +27,31 @@ To enforce the size of the view itself, we can easily subclass `ImageView` to en
 
 7. Pass these onto the superclass to handle the rest of the measurement class `super.onMeasure(widthMeasureSpec, threeTwoHeightMeasureSpec)`.
 
-_Note:_ To use this custom class, use the fully qualified name in the tag and follow the convention setting `0dp` as the height.
+_Note:_ To use this custom class, use the fully qualified name in the tag and follow the convention setting `0dp` as the `android:layout_height`.
+
+**CODE SNIPPETS**
+```
+public class ThreeTwoImageView extends ForegroundImageView {
+
+    public ThreeTwoImageView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int desiredHeight = width * 2 / 3;
+        int threeTwoHeightMeasureSpec = MeasureSpec.makeMeasureSpec(desiredHeight, MeasureSpec.EXACTLY);
+        super.onMeasure(widthMeasureSpec, threeTwoHeightMeasureSpec);
+    }
+}
+```
+
+```
+<com.example.android.ThreeTwoImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/transition_photo" />
+```
